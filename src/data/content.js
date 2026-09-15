@@ -92,7 +92,7 @@ export const skillGroups = [
   },
   {
     name: "Design & Collaboration",
-    skills: ["Figma", "Slack", "Google Workspace", "Microsoft Office"],
+    skills: ["Figma", "Canva", "Slack", "Discord", "Google Workspace", "Microsoft Office"],
   },
   {
     name: "Languages",
