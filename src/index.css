@@ -1,0 +1,84 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Public Sans", ui-sans-serif, -apple-system, "Segoe UI", sans-serif;
+  --font-display: "Archivo", "Public Sans", sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+
+  --color-bg: #faf9f6;
+  --color-surface: #ffffff;
+  --color-surface-alt: #f1f0ea;
+  --color-ink: #171a1c;
+  --color-ink-muted: #63666e;
+  --color-ink-faint: #9296a0;
+  --color-accent: #0e7c66;
+  --color-accent-ink: #075a49;
+  --color-accent-soft: #e3f1ec;
+  --color-line: #e2e0d8;
+  --color-line-strong: #cfccc0;
+  --color-on-accent: #052620;
+}
+
+@layer theme {
+  .dark {
+    --color-bg: #0f1113;
+    --color-surface: #17191c;
+    --color-surface-alt: #1d2023;
+    --color-ink: #edede8;
+    --color-ink-muted: #a3a7ac;
+    --color-ink-faint: #6b6f76;
+    --color-accent: #5fe0c4;
+    --color-accent-ink: #c9fbee;
+    --color-accent-soft: #16302b;
+    --color-line: #2a2d31;
+    --color-line-strong: #383b40;
+    --color-on-accent: #052620;
+  }
+}
+
+@layer base {
+  :root {
+    color-scheme: light;
+    padding-top: env(safe-area-inset-top, 0px);
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+  }
+
+  :root.dark {
+    color-scheme: dark;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 5rem;
+  }
+
+  body {
+    margin: 0;
+    background: var(--color-bg);
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+    font-size: 16px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: var(--font-display);
+    letter-spacing: -0.01em;
+    text-wrap: balance;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-accent);
+    outline-offset: 2px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
